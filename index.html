@@ -211,41 +211,28 @@
     }
 
     /* ── SAMPLE VIDEO ─────────────────────────────────── */
-    .video-wrapper {
-      max-width: 640px;
-      margin: 0 auto 24px;
-      aspect-ratio: 16 / 9;
-      background: #0f1d32;
+    .video-grid {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .video-col { text-align: center; }
+    .video-col video {
+      max-width: 300px;
+      width: 100%;
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .play-btn {
-      width: 72px;
-      height: 72px;
-      background: rgba(200,169,81,0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .play-btn:hover { transform: scale(1.08); }
-    .play-btn::after {
-      content: '';
+      margin: 0 auto;
       display: block;
-      width: 0;
-      height: 0;
-      border-top: 14px solid transparent;
-      border-bottom: 14px solid transparent;
-      border-left: 22px solid #0a1628;
-      margin-left: 4px;
+      object-fit: cover;
+    }
+    .video-label {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 12px;
     }
     .video-caption {
       text-align: center;
@@ -535,21 +522,22 @@
     </div>
   </section>
 
-  <!--
-    SAMPLE VIDEO SECTION (uncomment when demo reel is ready)
-    Replace the play-btn div with a Sendspark or YouTube embed URL.
-
   <section class="section section--alt" id="sample-video">
     <div class="container">
       <h2 class="section-heading">See it in action</h2>
-      <div class="video-wrapper">
-        <button class="play-btn" aria-label="Play sample video"></button>
+      <div class="video-grid">
+        <div class="video-col">
+          <video src="welcome.mp4" playsinline webkit-playsinline controls preload="metadata" poster=""></video>
+          <p class="video-label">What is VidSell?</p>
+        </div>
+        <div class="video-col">
+          <video src="sample.mp4" playsinline webkit-playsinline controls preload="metadata" poster=""></video>
+          <p class="video-label">See a sample outreach video</p>
+        </div>
       </div>
-      <p class="video-caption">This is what your prospects will see, a personal, human message that cuts through the noise.</p>
+      <p class="video-caption">Real videos, real presenters, real results. This is what your prospects will see.</p>
     </div>
   </section>
-
-  -->
 
   <!-- ═══ WHO IT'S FOR ══════════════════════════════════ -->
   <section class="section" id="who-its-for">
